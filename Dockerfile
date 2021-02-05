@@ -77,6 +77,8 @@ RUN useradd --create-home --shell /bin/bash --uid 901 --gid 901 acousticbrainz
 
 RUN chown acousticbrainz:acousticbrainz /code
 
+RUN pip install --upgrade pip
+
 # Python dependencies
 RUN mkdir /code/docs/ && chown acousticbrainz:acousticbrainz /code/docs/
 COPY --chown=acousticbrainz:acousticbrainz docs/requirements.txt /code/docs/requirements.txt
